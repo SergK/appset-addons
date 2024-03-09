@@ -12,9 +12,9 @@ version: 46.4.1
 
 # Version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application.
-appVersion: "46.4.1"
+appVersion: "v0.71.2"
 
 dependencies:
 - name: kube-prometheus-stack
-  version: 46.4.1
+  version: 56.21.4
   repository: https://prometheus-community.github.io/helm-charts
