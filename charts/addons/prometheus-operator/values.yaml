@@ -1,0 +1,35 @@
+kube-prometheus-stack:
+  fullnameOverride: "prom"
+  nameOverride: "prom"
+
+  defaultRules:
+    rules:
+      etcd: false
+
+  kubeControllerManager:
+    enabled: false
+  kubeEtcd:
+    enabled: false
+  kubeScheduler:
+    enabled: false
+
+  prometheusOperator:
+    resources:
+      limits:
+        memory: "256Mi"
+      requests:
+        cpu: "100m"
+        memory: "128Mi"
+
+  prometheus:
+    ingress:
+      enabled: false
+      hosts:
+        - prometheus.example.com
+    additionalServiceMonitors: []
+
+  alertmanager:
+    enabled: false
+
+  grafana:
+    enabled: false
