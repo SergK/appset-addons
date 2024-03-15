@@ -56,7 +56,7 @@ edp-install:
       baseURL: ""
       oidc:
         # Enable OIDC integration. Default: false
-        enabled: true
+        enabled: false
         # -- Keycloak URL
         keycloakUrl: "https://keycloak.example.com"
         # -- OIDC client ID
