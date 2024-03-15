@@ -55,8 +55,8 @@ spec:
             - .webhooks[].clientConfig.caBundle
 
   templatePatch: |
-    {{- if .autoSync }}
+    {{- if (default false .values.autoSync) }}
       syncPolicy:
         automated:
-          prune: {{ .prune }}
+          prune: {{ default false .values.prune }}
     {{- end }}
