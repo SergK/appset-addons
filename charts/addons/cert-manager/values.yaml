@@ -1,4 +1,6 @@
 # we are dependency here, so ensure that all values are set correctly under 'cert-manager' values
 cert-manager:
   fullnameOverride: cert-manager
-  installCRDs: true
+  crds:
+    enabled: true
+    keep: true
