@@ -56,5 +56,5 @@ spec:
     {{- if .autoSync }}
       syncPolicy:
         automated:
-          prune: {{ default false .prune }}
+          prune: {{ .prune }}
     {{- end }}
