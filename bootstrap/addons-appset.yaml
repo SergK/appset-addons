@@ -54,3 +54,10 @@ spec:
             kind: ValidatingWebhookConfiguration
             jqPathExpressions:
             - .webhooks[].clientConfig.caBundle
+
+  templatePatch: |
+    {{- if .autoSync }}
+      syncPolicy:
+        automated:
+          prune: {{ .prune }}
+    {{- end }}
