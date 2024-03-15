@@ -2337,7 +2337,7 @@ spec:
       labels:
         app.kubernetes.io/name: events
         app.kubernetes.io/component: events
-            app.kubernetes.io/version: "v0.53.4"
+        app.kubernetes.io/version: "v0.53.4"
         app.kubernetes.io/part-of: tekton-pipelines
         # tekton.dev/release value replaced with inputs.params.versionTag in pipeline/tekton/publish.yaml
         pipeline.tekton.dev/release: "v0.53.4"
@@ -3019,7 +3019,7 @@ spec:
       labels:
         app.kubernetes.io/name: resolvers
         app.kubernetes.io/component: resolvers
-            app.kubernetes.io/version: "v0.53.4"
+        app.kubernetes.io/version: "v0.53.4"
         app.kubernetes.io/part-of: tekton-pipelines
         # tekton.dev/release value replaced with inputs.params.versionTag in pipeline/tekton/publish.yaml
         pipeline.tekton.dev/release: "v0.53.4"
@@ -3224,7 +3224,7 @@ spec:
       labels:
         app.kubernetes.io/name: webhook
         app.kubernetes.io/component: webhook
-            app.kubernetes.io/version: "v0.53.4"
+        app.kubernetes.io/version: "v0.53.4"
         app.kubernetes.io/part-of: tekton-pipelines
         # tekton.dev/release value replaced with inputs.params.versionTag in pipeline/tekton/publish.yaml
         pipeline.tekton.dev/release: "v0.53.4"
