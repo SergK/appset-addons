@@ -20,26 +20,26 @@ spec:
               selector:
                 matchExpressions:
                 # Check label to see if addon is enabled.
-                - key: enable_{{ .values.app_name | snakecase }}
+                - key: enable_{{ .path.basename | snakecase }}
                   operator: In
                   values: ['true']
   template:
     metadata:
-      name: 'addon-{{.cluster.name}}-{{.values.app_name}}'
+      name: 'addon-{{.name}}-{{.path.basename}}'
     spec:
       project: default
       source:
         helm:
-          releaseName: '{{.values.app_name}}'
+          releaseName: '{{.path.basename}}'
           ignoreMissingValueFiles: true
           valueFiles:
-          - '../../../clusters/{{.cluster.name}}/addons/{{.values.app_name}}.yaml'
+          - '../../../clusters/{{.name}}/addons/{{.path.basename}}.yaml'
         repoURL: 'https://github.com/sergk/appset-addons'
-        path: 'charts/addons/{{.values.app_name}}'
+        path: 'charts/addons/{{.path.basename}}'
         targetRevision: poc
       destination:
-        namespace: '{{.values.app_name}}'
-        name: '{{.cluster.name}}'
+        namespace: '{{.path.basename}}'
+        name: '{{.name}}'
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
@@ -56,33 +56,7 @@ spec:
 
   templatePatch: |
     {{- if .autoSync }}
-    spec:
-      project: default
-      source:
-        helm:
-          releaseName: '{{.values.app_name}}'
-          ignoreMissingValueFiles: true
-          valueFiles:
-          - '../../../clusters/{{.cluster.name}}/addons/{{.values.app_name}}.yaml'
-        repoURL: 'https://github.com/sergk/appset-addons'
-        path: 'charts/addons/{{.values.app_name}}'
-        targetRevision: poc
-      destination:
-        namespace: '{{.values.app_name}}'
-        name: '{{.cluster.name}}'
       syncPolicy:
         automated:
           prune: {{ .prune }}
-        syncOptions:
-          - CreateNamespace=true
-          - ServerSideApply=true  # Big CRDs.
-      ignoreDifferences:
-          - group: admissionregistration.k8s.io
-            kind: MutatingWebhookConfiguration
-            jqPathExpressions:
-            - .webhooks[].clientConfig.caBundle
-          - group: admissionregistration.k8s.io
-            kind: ValidatingWebhookConfiguration
-            jqPathExpressions:
-            - .webhooks[].clientConfig.caBundle
     {{- end }}
