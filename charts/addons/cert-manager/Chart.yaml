@@ -8,7 +8,7 @@ type: application
 
 # The chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
-version: 1.12.6
+version: 1.14.4
 
 # Version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application.
@@ -16,5 +16,5 @@ appVersion: "v1.14.4"
 
 dependencies:
 - name: cert-manager
-  version: v1.14.4
+  version: 1.14.4
   repository: https://charts.jetstack.io
