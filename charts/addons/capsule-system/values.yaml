@@ -26,3 +26,6 @@ capsule :
 # it allows the pod to be allocated to any node, regardless of any associated taints.
   tolerations:
     - operator: Exists
+
+  customAnnotations:
+    "app.edp.epam.com/used-by": "edp"
