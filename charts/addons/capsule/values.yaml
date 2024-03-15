@@ -1,0 +1,28 @@
+capsule :
+  manager:
+    options:
+      # enable capsule for EDP tenant and cd-pipeline-operator
+      # NOTE: Capsule cannot manage cluster system namespaces
+      capsuleUserGroups:
+        - capsule.clastix.io
+        # uncomment if Argo CD manage main EDP tenant
+        - system:serviceaccounts:argocd
+        # enable for cd-pipeline-operator https://github.com/epam/edp-cd-pipeline-operator/blob/release/2.17/deploy-templates/values.yaml#L10
+        - system:serviceaccounts:edp
+        # uncomment if edp-oidc-admins group manage main EDP tenant https://epam.github.io/edp-install/operator-guide/edp-access-model
+        # - edp-oidc-admins
+
+    resources:
+      limits:
+        cpu: 500m
+        memory: 512Mi
+      requests:
+        cpu: 200m
+        memory: 128Mi
+
+# This parameter is responsible for ensuring that the pod can cope with
+# any existing taint on a node, without taking into account the taint's
+# specific properties, such as its key, value or impact. As a consequence,
+# it allows the pod to be allocated to any node, regardless of any associated taints.
+  tolerations:
+    - operator: Exists
