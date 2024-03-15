@@ -1,7 +1,7 @@
 apiVersion: v2
 description: A Helm chart for EDP Install
 home: https://epam.github.io/edp-install/
-name: tekton
+name: tekton-pipeline
 type: application
 version: 0.53.4
 appVersion: v0.53.4
