@@ -1,5 +1,5 @@
 capsule:
-  fullnameOverride: capsule-system
+  fullnameOverride: capsule
   manager:
     options:
       # enable capsule for EDP tenant and cd-pipeline-operator
