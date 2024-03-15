@@ -54,6 +54,7 @@ spec:
 
   templatePatch: |
     {{- if .autoSync }}
+    spec:
       syncPolicy:
         automated:
           prune: {{ .prune }}
