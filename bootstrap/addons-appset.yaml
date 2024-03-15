@@ -13,8 +13,6 @@ spec:
               revision: poc
               files:
                 - path: configs/*/*/config.yaml
-              values:
-                app_name: "{{.path.basename}}"
 
           - clusters:
               selector:
@@ -55,8 +53,8 @@ spec:
             - .webhooks[].clientConfig.caBundle
 
   templatePatch: |
-    {{- if (default false .values.autoSync) }}
+    {{- if .autoSync }}
       syncPolicy:
         automated:
-          prune: {{ default false .values.prune }}
+          prune: {{ .prune }}
     {{- end }}
