@@ -14,7 +14,7 @@ spec:
               files:
                 - path: configs/*/*/config.yaml
               values:
-                app_name: "{{index .path 2}"
+                app_name: "{{index .path 2}}"
 
           - clusters:
               selector:
