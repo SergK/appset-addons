@@ -1,0 +1,3 @@
+cluster:
+  owner: "cluster-admin@company.com"
+  name: "in-cluster"
