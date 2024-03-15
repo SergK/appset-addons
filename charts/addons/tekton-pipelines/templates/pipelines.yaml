@@ -2147,7 +2147,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: controller
       app.kubernetes.io/component: controller
-        app.kubernetes.io/part-of: tekton-pipelines
+      app.kubernetes.io/part-of: tekton-pipelines
   template:
     metadata:
       labels:
@@ -2331,7 +2331,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: events
       app.kubernetes.io/component: events
-        app.kubernetes.io/part-of: tekton-pipelines
+      app.kubernetes.io/part-of: tekton-pipelines
   template:
     metadata:
       labels:
@@ -3013,7 +3013,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: resolvers
       app.kubernetes.io/component: resolvers
-        app.kubernetes.io/part-of: tekton-pipelines
+      app.kubernetes.io/part-of: tekton-pipelines
   template:
     metadata:
       labels:
@@ -3035,7 +3035,7 @@ spec:
                   matchLabels:
                     app.kubernetes.io/name: resolvers
                     app.kubernetes.io/component: resolvers
-                                    app.kubernetes.io/part-of: tekton-pipelines
+                    app.kubernetes.io/part-of: tekton-pipelines
                 topologyKey: kubernetes.io/hostname
               weight: 100
       serviceAccountName: tekton-pipelines-resolvers
@@ -3218,7 +3218,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: webhook
       app.kubernetes.io/component: webhook
-        app.kubernetes.io/part-of: tekton-pipelines
+      app.kubernetes.io/part-of: tekton-pipelines
   template:
     metadata:
       labels:
@@ -3248,7 +3248,7 @@ spec:
                   matchLabels:
                     app.kubernetes.io/name: webhook
                     app.kubernetes.io/component: webhook
-                                    app.kubernetes.io/part-of: tekton-pipelines
+                    app.kubernetes.io/part-of: tekton-pipelines
                 topologyKey: kubernetes.io/hostname
               weight: 100
       serviceAccountName: tekton-pipelines-webhook
