@@ -15,9 +15,7 @@ spec:
     path: charts/addons/cert-manager
     targetRevision: {{ .Values.targetRevision }}
     helm:
-      values: |
-        cert-manager:
-        {{- toYaml (index .Values "cert-manager") | nindent 10 }}
+      releaseName: cert-manager
   destination:
     name: {{ .Values.destinationServer | default "in-cluster" }}
     namespace: cert-manager
