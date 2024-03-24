@@ -11,8 +11,8 @@ targetRevision: "main"
 # -- Cert Manager
 cert-manager:
   # -- whether to create the namespace or not
-  createNamespace: false
-  enable: false
+  createNamespace: true
+  enable: true
 
 # -- External Secrets Operator
 external-secrets:
