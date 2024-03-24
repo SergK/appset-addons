@@ -16,5 +16,5 @@ cert-manager:
 
 # -- External Secrets Operator
 external-secrets:
-  createNamespace: false
-  enable: false
+  createNamespace: true
+  enable: true
