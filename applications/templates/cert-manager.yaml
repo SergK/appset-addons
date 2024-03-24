@@ -16,6 +16,9 @@ spec:
     targetRevision: {{ .Values.targetRevision }}
     helm:
       releaseName: cert-manager
+      values: |
+        cert-manager:
+        {{- toYaml (index .Values "cert-manager") | nindent 10 }}
   destination:
     name: {{ .Values.destinationServer | default "in-cluster" }}
     namespace: cert-manager

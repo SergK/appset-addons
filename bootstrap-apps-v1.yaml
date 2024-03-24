@@ -11,7 +11,5 @@ spec:
   source:
     path: applications/
     repoURL: https://github.com/sergk/appset-addons
-    directory:
-      recurse: true
   syncPolicy:
     automated: {}
