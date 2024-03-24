@@ -1,4 +1,4 @@
-{{- if and (.Values.certmanager) (.Values.certmanager.enable) -}}
+{{- if and (index .Values "cert-manager") (index .Values "cert-manager" "enable") -}}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -25,7 +25,7 @@ spec:
     automated:
       prune: true
     syncOptions:
-      - CreateNamespace={{ .Values.certmanager.createNamespace }}
+      - CreateNamespace={{ (index .Values "cert-manager" "createNamespace") }}
     retry:
       limit: 1
       backoff:
