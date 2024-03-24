@@ -1,0 +1,16 @@
+apiVersion: v2
+description: Argo Application Demo
+name: cluster-add-ons
+type: application
+version: 0.1.0
+appVersion: 0.1.0
+keywords:
+  - add-ons
+  - github
+maintainers:
+  - name: sergk
+    url: https://github.com/SergK
+sources:
+  - https://github.com/SergK/appset-addons
+annotations:
+  artifacthub.io/license: Apache-2.0

@@ -1,0 +1,20 @@
+# Specifies the destination server where the code will be deployed.
+# In this case, "in-cluster" indicates that the deployment will happen within the Kubernetes cluster itself.
+destinationServer: "in-cluster"
+
+repoUrl: "https://github.com/SergK/appset-addons"
+
+# Specifies the target revision or branch of the Git repository that will be deployed.
+# In this case, "main" indicates that the main branch of the repository will be used for deployment.
+targetRevision: "main"
+
+# -- Cert Manager
+cert-manager:
+  # -- whether to create the namespace or not
+  createNamespace: false
+  enable: false
+
+# -- External Secrets Operator
+external-secrets:
+  createNamespace: false
+  enable: false
