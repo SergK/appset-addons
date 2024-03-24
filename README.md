@@ -4,10 +4,24 @@
 
 Let's apply Apps of Apps pattern using Argo ApplicationSet.
 
+## Prerequisites
+
+- Kubernetes cluster
+
+```bash
+kind create cluster --config kind-1.29.yaml
+```
+
+- ArgoCD installed
+
+```bash
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+
 Repository structure:
 
 bootstrap.yaml - Provision ApplicationSet
-
 
 ```yaml
 apiVersion: argoproj.io/v1alpha1
